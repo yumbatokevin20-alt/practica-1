@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NEGOCIOS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 3px;
+            cursor: pointer;
+        }
+
+        .nav button.active {
+            background-color: #333;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .menu-lateral button {
+            width: 90%;
+        }
+
+        input,
+        textarea {
+            max-width: 95%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table border="1" width="100%">
+
+        <tr>
+            <td colspan="3">
+                <h1>
+                    <center>EL MUNDO DE LOS NEGOCIOS</center>
+                </h1>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <center class="nav">
+                    <button data-section="inicio" class="active">INICIO</button>
+                    <button data-section="empresas">EMPRESAS</button>
+                    <button data-section="ventas">VENTAS</button>
+                    <button data-section="marketing">MARKETING</button>
+                    <button data-section="contacto">CONTACTO</button>
+                </center>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="20%" valign="top" class="menu-lateral">
+                <h2>IZQUIERDA</h2>
+                <button data-section="empresas">Empresas</button>
+                <hr>
+                <button data-section="emprendimiento">Emprendimiento</button>
+                <hr>
+                <button data-section="ventas">Ventas</button>
+                <hr>
+                <button data-section="marketing">Marketing</button>
+                <hr>
+                <button data-section="contacto">Contacto</button>
+                <br><br>
+                <center>
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=300" width="120" height="80"
+                        alt="Reunión de negocios">
+                </center>
+            </td>
+
+            <td width="60%" valign="top">
+                <div id="contenido">
+                    <h2>
+                        <center>INICIO</center>
+                    </h2>
+                    <center>
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600" width="350"
+                            height="180" alt="Equipo de negocios">
+                    </center>
+                    <p>
+                        <center>
+                            Bienvenido al mundo de los negocios. Aquí encontrarás información
+                            sobre empresas, emprendimiento, ventas y marketing.
+                        </center>
+                    </p>
+                    <center>
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600" width="250"
+                            height="150" alt="Trabajo en equipo">
+                    </center>
+                    <p>
+                        Selecciona una opción del menú para conocer más información.
+                    </p>
+                </div>
+            </td>
+
+            <td width="20%" valign="top">
+                <h2>FORMULARIO</h2>
+                <form id="formulario">
+                    <p>Nombre:</p>
+                    <input type="text" id="nombre" required>
+
+                    <p>Apellido:</p>
+                    <input type="text" id="apellido" required>
+
+                    <p>Edad:</p>
+                    <input type="number" id="edad" min="1" required>
+
+                    <p>Negocio:</p>
+                    <input type="text" id="negocio">
+
+                    <p>Mensaje:</p>
+                    <textarea id="mensaje" rows="3" cols="15"></textarea>
+
+                    <br><br>
+                    <button type="submit">ENVIAR</button>
+                    <p id="respuesta"></p>
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <h2>
+                    <center>SECCION INFERIOR AMPLIA</center>
+                </h2>
+                <center>
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800" width="400"
+                        height="120" alt="Oficina">
+                </center>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <p>
+                    <center>EMPRESAS - CLIENTES - PRODUCTOS</center>
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <p>
+                    <center>VENTAS - MARKETING - INVERSION - EMPRENDIMIENTO</center>
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <p>
+                    <center>2026 - EL MUNDO DE LOS NEGOCIOS</center>
+                </p>
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        const contenidos = {
+            inicio: `
+<h2><center>INICIO</center></h2>
+<center>
+<img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600"
+width="350" height="180" alt="Equipo de negocios">
+</center>
+<p><center>
+Bienvenido al mundo de los negocios. Aquí encontrarás información
+sobre empresas, emprendimiento, ventas y marketing.
+</center></p>
+<center>
+<img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600"
+width="250" height="150" alt="Trabajo en equipo">
+</center>
+<p>Selecciona una opción del menú para conocer más información.</p>
+`,
+            empresas: `
+<h2><center>EMPRESAS</center></h2>
+<center>
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600"
+width="350" height="180" alt="Oficina de empresa">
+</center>
+<p><b>¿Qué es una empresa?</b></p>
+<p>
+Una empresa es una organización que ofrece productos o servicios
+para atender las necesidades de sus clientes.
+</p>
+<p><b>Elementos importantes:</b></p>
+<ul>
+<li>Clientes</li>
+<li>Productos o servicios</li>
+<li>Trabajadores</li>
+<li>Administración</li>
+</ul>
+`,
+            ventas: `
+<h2><center>VENTAS</center></h2>
+<center>
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600"
+width="350" height="180" alt="Ventas">
+</center>
+<p>
+Las ventas permiten que una empresa intercambie sus productos o
+servicios con los clientes y genere ingresos.
+</p>
+<p><b>Para mejorar las ventas:</b></p>
+<ul>
+<li>Conocer al cliente</li>
+<li>Explicar claramente el producto</li>
+<li>Ofrecer una buena atención</li>
+<li>Dar seguimiento al cliente</li>
+</ul>
+`,
+            marketing: `
+<h2><center>MARKETING</center></h2>
+<center>
+<img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600"
+width="350" height="180" alt="Marketing">
+</center>
+<p>
+El marketing ayuda a una empresa a comunicar el valor de sus
+productos o servicios y llegar a sus clientes.
+</p>
+<p><b>Algunas herramientas:</b></p>
+<ul>
+<li>Publicidad</li>
+<li>Redes sociales</li>
+<li>Promociones</li>
+<li>Contenido digital</li>
+</ul>
+`,
+            emprendimiento: `
+<h2><center>EMPRENDIMIENTO</center></h2>
+<center>
+<img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600"
+width="350" height="180" alt="Emprendimiento">
+</center>
+<p>
+Emprender consiste en desarrollar una idea o proyecto para ofrecer
+un producto o servicio.
+</p>
+<p><b>Pasos básicos:</b></p>
+<ol>
+<li>Identificar una necesidad</li>
+<li>Crear una idea de negocio</li>
+<li>Conocer a los clientes</li>
+<li>Planificar los recursos</li>
+<li>Poner en marcha el negocio</li>
+</ol>
+`,
+            contacto: `
+<h2><center>CONTACTO</center></h2>
+<center>
+<img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600"
+width="350" height="180" alt="Contacto empresarial">
+</center>
+<p><center>
+¿Tienes una pregunta o quieres información sobre un negocio?
+Completa el formulario de la derecha.
+</center></p>
+<p><center>
+Después de enviar el formulario aparecerá un mensaje de confirmación.
+</center></p>
+`
+        };
+
+        function mostrarSeccion(seccion) {
+            const contenido = document.getElementById("contenido");
+            contenido.innerHTML = contenidos[seccion] || contenidos.inicio;
+
+            document.querySelectorAll("[data-section]").forEach(function (boton) {
+                boton.classList.toggle("active", boton.dataset.section === seccion);
+            });
+        }
+
+        document.querySelectorAll("[data-section]").forEach(function (boton) {
+            boton.addEventListener("click", function () {
+                mostrarSeccion(boton.dataset.section);
+            });
+        });
+
+        document.getElementById("formulario").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre").value.trim();
+            const apellido = document.getElementById("apellido").value.trim();
+            const edad = document.getElementById("edad").value;
+
+            if (!nombre || !apellido || !edad) {
+                document.getElementById("respuesta").textContent =
+                    "Completa los campos obligatorios.";
+                return;
+            }
+
+            document.getElementById("respuesta").textContent =
+                "¡Gracias, " + nombre + "! Tu formulario fue enviado correctamente.";
+            this.reset();
+        });
+    </script>
+
+</body>
+
+</html>
